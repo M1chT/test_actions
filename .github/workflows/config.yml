@@ -22,12 +22,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install pytest
         pip install pylint
-      
-    # - name: Run Sonarqube Scan
-    #   uses: SonarSource/sonarqube-scan-action@v2.0.1
+
     - name: Run Pylint
       run: |
         python -m pylint ./src --fail-under=5.0
+
+    - name: SonarQube Scan
+      uses: sonarsource/sonarqube-scan-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         
     - name: Run tests
       run: |
