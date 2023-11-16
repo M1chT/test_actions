@@ -1,3 +1,6 @@
-# This is a test commit
+""" addition script """
 def add(a, b):
+    """
+    addition function
+    """
     return a + b
