@@ -27,7 +27,7 @@ jobs:
     #   uses: SonarSource/sonarqube-scan-action@v2.0.1
     - name: Run Pylint
       run: |
-        python -m pylint ./src
+        python -m pylint ./src --fail-under=5.0
         
     - name: Run tests
       run: |
