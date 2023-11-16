@@ -1,6 +1,6 @@
 """ addition script """
-def add(a, b):
+def add(first_no, sec_no):
     """
     addition function
     """
-    return a + b
+    return first_no + sec_no
